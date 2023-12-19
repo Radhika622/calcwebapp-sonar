@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+     tools{
+        maven 'mymaven'
+    }
+    agent {
+        label 'JenkinAgent1'
+    }
     stages {
         stage('Git Checkout') {
             steps {
