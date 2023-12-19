@@ -7,10 +7,16 @@ pipeline {
 		            echo "Code Checked-out Successfully!!";
             }
         }
-        
-        stage('Package') {
+        stage('Compile') {
             steps {
-                bat 'mvn package'    
+                bat 'mvn compile'    
+		            echo "Maven compile Goal Executed Successfully!";
+            }
+        }
+	    
+        stage('Clean and  Install') {
+            steps {
+                bat 'mvn clean install'    
 		            echo "Maven Package Goal Executed Successfully!";
             }
         }
