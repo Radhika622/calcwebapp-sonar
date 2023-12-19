@@ -14,14 +14,14 @@ pipeline {
         }
         stage('Compile') {
             steps {
-                bat 'mvn compile'    
+                sh 'mvn compile'    
 		            echo "Maven compile Goal Executed Successfully!";
             }
         }
 	    
         stage('Clean and  Install') {
             steps {
-                bat 'mvn clean install'    
+                sh 'mvn clean install'    
 		            echo "Maven Package Goal Executed Successfully!";
             }
         }
