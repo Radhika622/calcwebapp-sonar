@@ -25,6 +25,19 @@ pipeline {
 		            echo "Maven Package Goal Executed Successfully!";
             }
         }
+
+	     stage('Docker Build') {
+            steps {
+                 sh 'docker build -t address .'    
+		            echo "docker build command Executed Successfully!";
+            }
+        }
+	      stage('Docker run  Install') {
+            steps {
+                 'docker run -d --name radhika-calc-app -P address:latest'    
+		            echo "docker run command command Executed Successfully!";
+            }
+        }
         
         stage('JUnit Reports') {
             steps {
