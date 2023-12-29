@@ -28,7 +28,7 @@ pipeline {
 
 	     stage('Docker Build') {
             steps {
-                 sh 'docker build -t address .'    
+                 sh 'docker build -t address.war .'    
 		            echo "docker build command Executed Successfully!";
             }
         }
