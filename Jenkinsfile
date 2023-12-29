@@ -28,13 +28,13 @@ pipeline {
 
 	     stage('Docker Build') {
             steps {
-                 sh 'docker build -t address .'    
+                 sh 'docker build -t calcwebapp .'    
 		            echo "docker build command Executed Successfully!";
             }
         }
 	      stage('Docker run  Install') {
             steps {
-               sh  'docker run -d --name radhika-calc-app -P address:latest'    
+               sh  'docker run -d --name radhika-calc-app -P calcwebapp:latest'    
 		            echo "docker run command command Executed Successfully!";
             }
         }
