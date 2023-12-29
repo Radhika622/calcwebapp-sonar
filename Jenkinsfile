@@ -34,7 +34,7 @@ pipeline {
         }
 	      stage('Docker run  Install') {
             steps {
-                 'docker run -d --name radhika-calc-app -P address:latest'    
+               sh  'docker run -d --name radhika-calc-app -P address:latest'    
 		            echo "docker run command command Executed Successfully!";
             }
         }
